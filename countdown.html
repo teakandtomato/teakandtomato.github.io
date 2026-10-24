@@ -18,10 +18,11 @@
   .flap { position:relative; width:52px; height:68px; perspective:300px; }
   .half { position:absolute; left:0; right:0; height:50%; overflow:hidden; text-align:center;
           background:#B8743F; color:#F4EEE3; font:italic 600 46px 'Bricolage Grotesque', ui-sans-serif, sans-serif; font-synthesis:style; }
-  .half span { display:block; height:68px; line-height:68px; }
+  .half span { display:block; height:68px; line-height:68px; transform:translateX(var(--nudge)); }
+  :root { --nudge:-3px; } /* italic leans right; pull digits back to the card's center */
   .top    { top:0;    border-radius:10px 10px 0 0; }
   .bottom { bottom:0; border-radius:0 0 10px 10px; }
-  .bottom span, .unfold span { transform:translateY(-34px); }
+  .bottom span, .unfold span { transform:translate(var(--nudge), -34px); }
   .fold   { top:0; border-radius:10px 10px 0 0; transform-origin:50% 100%; z-index:2; backface-visibility:hidden; }
   .unfold { bottom:0; border-radius:0 0 10px 10px; transform-origin:50% 0%; z-index:2; transform:rotateX(90deg); backface-visibility:hidden; }
   .flap::after { content:""; position:absolute; left:0; right:0; top:50%; height:1px; background:rgba(74,52,38,.35); z-index:3; }
